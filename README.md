@@ -310,13 +310,6 @@ If given additional time:
 - Execution Roadmap
 - Risk & Compliance Assessment
 
----
-
-## Full Case Study
-
-📄 See the complete report:
-
-[Nyasa_Dwivedi_Ditto_AI_Calling_Final.pdf](docs/Nyasa_Dwivedi_Ditto_AI_Calling_Final.pdf)
 
 ---
 
