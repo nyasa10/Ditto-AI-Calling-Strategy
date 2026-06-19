@@ -324,8 +324,4 @@ If given additional time:
 
 **Nyasa Dwivedi**
 
-Product Analytics • Product Operations • Data Analytics
 
-LinkedIn: www.linkedin.com/in/nyasa-dwivedi
-
-GitHub: https://github.com/nyasadwivedi
