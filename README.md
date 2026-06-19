@@ -1,320 +1,70 @@
-# AI Calling Strategy for Ditto Insurance
+# AI Calling Strategy — Ditto Insurance
 
-> Product Strategy & Operations Case Study
-
-## Overview
-
-This case study explores how AI voice agents can be introduced into Ditto Insurance's sales funnel while preserving the company's trust-first brand positioning.
-
-Rather than attempting to automate insurance advisory calls, the proposal focuses on the highest-leverage opportunity: automating lead qualification and slot confirmation while keeping all insurance advice human-led.
-
-The core thesis is simple:
-
-> AI should automate logistics, not trust.
+**Nyasa Dwivedi · Product Strategy Case Study**
 
 ---
 
-## Problem Statement
+## What This Is
 
-Ditto's customer journey involves multiple stages before a prospect reaches an advisor.
+Ditto Insurance loses over 85% of its leads before a prospect ever speaks to an advisor — not because the product is bad, but because the logistics between "form submitted" and "call booked" are slow and manual.
 
-Analysis of industry benchmarks suggests that more than **85% of leads are lost before speaking to an advisor**, creating an opportunity to improve operational efficiency through AI-assisted scheduling and lead confirmation.
+This case study proposes an AI voice calling strategy to fix that gap, without touching the one thing Ditto cannot afford to automate: the advisory call itself.
 
-The challenge was to identify:
+The central decision this entire document is built around:
 
-- Where AI can create value
-- Where AI should not be used
-- How to preserve customer trust
-- How to remain compliant with insurance regulations
-- Whether the business case justifies implementation
+> **AI should handle logistics. Humans should handle trust.**
 
 ---
 
-## Key Recommendation
+## The Problem I Was Solving
 
-### Automate
+Ditto's advisors are spending a meaningful chunk of their day on tasks that require no insurance knowledge — confirming leads, booking slots, sending reminders. Meanwhile, inbound leads who submitted a form 20 minutes ago have already moved on.
 
-✅ Lead Qualification
-
-✅ Slot Booking
-
-✅ Appointment Confirmation
-
-✅ Reminder Calls
+The opportunity isn't to replace advisors. It's to make sure leads actually reach them.
 
 ---
 
-### Do Not Automate
+## What's Inside
 
-❌ Insurance Advisory Calls
+**Funnel Analysis** — A stage-by-stage breakdown of where Ditto loses leads, with conversion benchmarks sourced from LeadSquared, Unbounce, and Zopper India. The prioritisation is explicit: Stages 2–3 are the only stages where AI adds value without adding risk.
 
-❌ Policy Recommendations
+**User Segmentation** — Three customer segments (under 35, 35–50, 50+) with different channel preferences, behavioural hypotheses, and distinct success metrics. Labelled as hypotheses to be tested in the pilot, not assumptions to be shipped.
 
-❌ Underwriting Discussions
+**Platform Comparison** — Bolna AI, Exotel, and Plivo evaluated via direct vendor outreach (not just pricing pages). Recommendation: Bolna for the pilot (speed, native Hinglish, no-code), Exotel for scale (BFSI compliance, India data residency).
 
-❌ Claims Assistance
+**AI Caller Design** — A named persona (Arya), a full branching call script under 55 seconds, and 23 edge cases across customer behaviour, technical failures, language switching, and escalation triggers.
 
----
+**Execution Plan** — A 6-week rollout with owners, dependencies, and a time-of-day calling strategy based on Indian working professional pickup patterns.
 
-## Why Stages 2–3?
+**KPI Framework** — 5 metrics with derived targets (not guesses). Each target is anchored to an industry benchmark and tied to a specific decision it should trigger.
 
-The proposal focuses on two specific funnel stages:
-
-| Stage | Activity | AI Opportunity |
-|---------|---------|---------|
-| Stage 2 | Lead Qualification | High |
-| Stage 3 | Slot Confirmation | High |
-| Stage 4 | Advisory Consultation | None |
-
-### Rationale
-
-- No insurance advice is exchanged
-- Low compliance risk
-- High operational volume
-- Significant pre-advisory drop-offs
-- Faster response times improve conversions
-
-Most importantly:
-
-> The advisory consultation is Ditto's moat and should remain entirely human-led.
+**Dashboard Design** — Built around one question a sales manager should answer in under 60 seconds each morning: *did the AI perform, are leads stuck, and are there any brand risk signals?*
 
 ---
 
-## User Segmentation Hypothesis
+## The Decision I'm Most Confident In
 
-Different customer groups may respond differently to AI interactions.
+Keeping Stage 4 — the 30-minute advisory consultation — entirely human.
 
-| Segment | Preferred Channel | Success Metric |
-|----------|----------|----------|
-| Under 35 | WhatsApp-first | Slot Booking Rate |
-| 35–50 | AI Voice Call | Show-Up Rate |
-| 50+ | Human Escalation Path | Escalation Satisfaction |
+This is where most "AI in insurance" proposals go wrong. The advisory call is not a cost centre to be optimised. It is Ditto's product. It is why they have a 4.9 Google rating from 12,000+ customers. Automating it would be faster to build and catastrophic to the brand.
 
-These assumptions are treated as hypotheses and should be validated during the pilot.
+Every other decision in this document flows from protecting that boundary.
 
 ---
 
-## Platform Evaluation
+## What I'd Validate Next
 
-Three voice platforms were evaluated:
+The segmentation hypotheses (under-35 users preferring WhatsApp async, 50+ users needing faster human escalation) are stated explicitly as hypotheses — not shipped as decisions. The pilot is designed to test them.
 
-| Platform | Verdict |
-|-----------|----------|
-| Bolna AI | Recommended for Pilot |
-| Exotel | Recommended for Scale |
-| Plivo | Not Recommended for Pilot |
-
-### Final Recommendation
-
-**Pilot Phase:** Bolna AI
-
-**Scale Phase:** Exotel
-
-### Evaluation Criteria
-
-- Pricing
-- Compliance
-- CRM Integration
-- Language Support
-- Setup Complexity
-- Deployment Speed
-- Latency
+Given more time, I'd:
+- Interview 5–8 Ditto customers on whether an AI scheduling call feels helpful or intrusive
+- A/B test AI call vs. WhatsApp-first as the lead confirmation channel
+- Validate KPI targets against Ditto's actual CRM data before committing to scale benchmarks
 
 ---
 
-## AI Assistant Design
+## Full Document
 
-### Assistant Name
-
-**Arya**
-
-### Role
-
-Arya is a scheduling assistant.
-
-Arya is **not**:
-
-- A sales agent
-- An insurance advisor
-- A policy recommendation engine
-
-### Design Principles
-
-- Transparent about being AI
-- Never pushy
-- Never gives insurance advice
-- Respects customer opt-outs
-- Escalates uncertainty to humans
-
----
-
-## Risk Management
-
-The solution includes handling for:
-
-### Customer Behaviour
-
-- Busy customers
-- No answer
-- Already booked
-- Opt-out requests
-- Insurance questions
-
-### Technical Failures
-
-- Call drops
-- High latency
-- CRM downtime
-- Platform outages
-- Speech recognition errors
-
-### Escalation Triggers
-
-- Customer requests a human
-- Emotional distress
-- Prior insurance rejection
-- DND violations
-- Data inconsistencies
-
----
-
-## Pilot Plan
-
-### Duration
-
-30 Days
-
-### Audience
-
-100 inbound leads
-
-### Constraints
-
-- Non-DND numbers only
-- Explicitly opted-in leads only
-- Scheduling flow only
-- No advisory automation
-
-### Rollout
-
-1. Discovery & Alignment
-2. Vendor Setup
-3. Script Development
-4. Integration
-5. Internal Testing
-6. Soft Pilot
-7. KPI Review & Expansion
-
----
-
-## KPI Framework
-
-| KPI | Target |
-|--------|--------|
-| Slot Book Rate | ≥ 35% |
-| Connect Rate | ≥ 45% |
-| Show-Up Rate | ≥ 65% |
-| Complaint Rate | < 1% |
-| Cost per Slot | < 40% of Human Cost |
-
-These targets are benchmark-driven assumptions and should be recalibrated using actual pilot data.
-
----
-
-## Dashboard Design
-
-The dashboard is designed to answer three questions:
-
-1. Is the AI performing?
-2. Are leads getting stuck?
-3. Are there any trust or compliance risks?
-
-### Key Components
-
-- Daily Health Metrics
-- Funnel Monitoring
-- Live Call Feed
-- Cost & Efficiency Tracking
-- Alert & Action Queue
-
----
-
-## Key Trade-Offs
-
-### Decision
-
-Keep advisory calls human-led.
-
-### Why?
-
-Automating advisory conversations introduces:
-
-- Mis-selling risk
-- Regulatory exposure
-- Brand trust erosion
-
-The potential efficiency gains do not justify the risk.
-
----
-
-### Decision
-
-Choose Bolna AI for the pilot.
-
-### Why?
-
-- Faster deployment
-- Lower setup complexity
-- Native voice AI
-- Strong language support
-
----
-
-## What I'd Do Next
-
-If given additional time:
-
-- Conduct customer interviews
-- Validate channel preferences
-- Test WhatsApp-first vs AI-first journeys
-- Perform deeper regulatory analysis
-- Negotiate outcome-based vendor pricing
-
----
-
-## Skills Demonstrated
-
-- Product Strategy
-- Product Operations
-- Funnel Analysis
-- User Segmentation
-- KPI Design
-- Experiment Design
-- Vendor Evaluation
-- Process Design
-- Dashboard Planning
-- Risk Assessment
-- Stakeholder Thinking
-
----
-
-## Project Deliverables
-
-- Sales Funnel Analysis
-- User Segmentation Framework
-- AI Voice Platform Comparison
-- AI Call Flow Design
-- Edge Case Framework
-- KPI Architecture
-- Dashboard Design
-- Execution Roadmap
-- Risk & Compliance Assessment
-
-
----
-
-## Author
-
-**Nyasa Dwivedi**
+The complete case study — including funnel tables, call scripts, edge case handling, data schemas, and dashboard wireframe — is in the PDF above.
 
 
